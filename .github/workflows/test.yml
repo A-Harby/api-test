@@ -11,8 +11,10 @@ jobs:
   api-tests:
     runs-on: ubuntu-latest
     steps:
-      # Runs Schemathesis tests with all checks enabled
+      # Runs positive Schemathesis tests
       - uses: schemathesis/action@v1
         with:
-          # Your API schema location
-          schema: 'docs/swagger.json'
+          # A local API schema location
+          schema: ',/docs/swagger.json'
+          # API base URL
+          base-url: 'https://gridproxy.dev.grid.tf'
