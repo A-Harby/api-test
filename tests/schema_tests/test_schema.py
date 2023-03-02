@@ -5,7 +5,7 @@ from schemathesis.checks import not_a_server_error, status_code_conformance, con
 schema = schemathesis.from_path("docs/swagger.json", base_url='https://gridproxy.dev.grid.tf')
 
 @pytest.mark.parametrize("check", [not_a_server_error, status_code_conformance, content_type_conformance, response_schema_conformance, response_headers_conformance])
-@schema.parametrize()
+@schema.parametrize(endpoint='/contracts')
 def test_contracts(case, check):
     response = case.call()
     case.validate_response(response, checks=(check,))
