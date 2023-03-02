@@ -11,10 +11,12 @@ jobs:
   api-tests:
     runs-on: ubuntu-latest
     steps:
-      # Runs positive Schemathesis tests
-      - uses: schemathesis/action@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setting up Python
+        uses: actions/setup-python@v2
         with:
-          # A local API schema location
-          schema: ',/docs/swagger.json'
-          # API base URL
-          base-url: 'https://gridproxy.dev.grid.tf'
+          python-version: "3.10"
+      - name: Run tests
+        working-directory: ./tests/schema_tests
+        run: python -m pytest -v
