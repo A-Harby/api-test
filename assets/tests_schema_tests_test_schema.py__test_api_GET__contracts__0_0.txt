@@ -1,0 +1,13 @@
+tests/schema_tests/test_schema.py::test_api[GET /contracts]:
+
+  - during reuse phase (4.59 seconds):
+    - Typical runtimes: 399-849 ms, ~ 2% in data generation
+    - 0 passing examples, 10 failing examples, 0 invalid examples
+    - Found 1 distinct error in this phase
+
+  - during shrink phase (48.95 seconds):
+    - Typical runtimes: 2-2423 ms, ~ 22% in data generation
+    - 41 passing examples, 1 failing examples, 12 invalid examples
+    - Tried 54 shrinks of which 0 were successful
+
+  - Stopped because nothing left to do

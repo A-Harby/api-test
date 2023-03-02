@@ -1,0 +1,18 @@
+name: Schema test
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      # Runs Schemathesis tests with all checks enabled
+      - uses: schemathesis/action@v1
+        with:
+          # Your API schema location
+          schema: 'docs/swagger.json'
