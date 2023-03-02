@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 02-Mar-2023 at 10:31:36 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 02-Mar-2023 at 11:14:30 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,8 +269,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.6</td></tr></table>
     <h2>Summary</h2>
-    <p>2 tests ran in 92.45 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>5 tests ran in 2.14 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -281,21 +281,48 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/schema_tests/test_schema.py::test_contracts[GET /contracts][not_a_server_error]</td>
-          <td class="col-duration">45.97</td>
-          <td class="col-links"><a class="text" href="assets/tests_schema_tests_test_schema.py__test_contracts_GET__contracts__not_a_server_error__0_0.txt" target="_blank">Hypothesis stats</a> </td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">check = &lt;function not_a_server_error at 0x7f76fd9b20e0&gt;<br/><br/>    @pytest.mark.parametrize(&quot;check&quot;, [not_a_server_error, status_code_conformance, content_type_conformance, response_schema_conformance, response_headers_conformance])<br/>&gt;   @schema.parametrize()<br/><br/>tests/schema_tests/test_schema.py:8: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>case = Case(query={&#x27;node_id&#x27;: 2147483648}), check = &lt;function not_a_server_error at 0x7f76fd9b20e0&gt;<br/><br/>    @pytest.mark.parametrize(&quot;check&quot;, [not_a_server_error, status_code_conformance, content_type_conformance, response_schema_conformance, response_headers_conformance])<br/>    @schema.parametrize()<br/>    def test_contracts(case, check):<br/>        response = case.call()<br/>&gt;       case.validate_response(response, checks=(check,))<br/><span class="error">E       schemathesis.exceptions.CheckFailed: </span><br/><span class="error">E       </span><br/><span class="error">E       1. Received a response with 5xx status code: 500</span><br/><span class="error">E       </span><br/><span class="error">E       ----------</span><br/><span class="error">E       </span><br/><span class="error">E       Response status: 500</span><br/><span class="error">E       Response payload: `{&quot;error&quot;:&quot;failed to scan returned contracts from database: 2147483648 is greater than maximum value for Int4&quot;}</span><br/><span class="error">E       `</span><br/><span class="error">E       </span><br/><span class="error">E       Run this cURL command to reproduce this response: </span><br/><span class="error">E       </span><br/><span class="error">E           curl -X GET -H &#x27;X-Schemathesis-TestCaseId: ca911301e16243ba9d4b484ed8d0fc9f&#x27; &#x27;https://gridproxy.dev.grid.tf/contracts?node_id=2147483648&#x27;</span><br/><br/>tests/schema_tests/test_schema.py:11: CheckFailed<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/schema_tests/test_schema.py::test_contracts[GET /contracts][status_code_conformance]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
+          <td class="col-name">tests/schema_tests/test_schema.py::test_api[GET /ping][not_a_server_error]</td>
+          <td class="col-duration">0.43</td>
+          <td class="col-links"><a class="text" href="assets/tests_schema_tests_test_schema.py__test_api_GET__ping__not_a_server_error__0_0.txt" target="_blank">Hypothesis stats</a> </td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/schema_tests/test_schema.py::test_api[GET /ping][status_code_conformance]</td>
+          <td class="col-duration">0.47</td>
+          <td class="col-links"><a class="text" href="assets/tests_schema_tests_test_schema.py__test_api_GET__ping__status_code_conformance__0_0.txt" target="_blank">Hypothesis stats</a> </td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/schema_tests/test_schema.py::test_api[GET /ping][content_type_conformance]</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"><a class="text" href="assets/tests_schema_tests_test_schema.py__test_api_GET__ping__content_type_conformance__0_0.txt" target="_blank">Hypothesis stats</a> </td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/schema_tests/test_schema.py::test_api[GET /ping][response_schema_conformance]</td>
+          <td class="col-duration">0.39</td>
+          <td class="col-links"><a class="text" href="assets/tests_schema_tests_test_schema.py__test_api_GET__ping__response_schema_conformance__0_0.txt" target="_blank">Hypothesis stats</a> </td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/schema_tests/test_schema.py::test_api[GET /ping][response_headers_conformance]</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"><a class="text" href="assets/tests_schema_tests_test_schema.py__test_api_GET__ping__response_headers_conformance__0_0.txt" target="_blank">Hypothesis stats</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>

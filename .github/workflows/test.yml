@@ -25,5 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: schema-pytest-results
-          path: report.html
+          path: |
+            report.html
+            assets
         if: ${{ always() }}

@@ -1,0 +1,7 @@
+tests/schema_tests/test_schema.py::test_api[GET /ping][response_schema_conformance]:
+
+  - during generate phase (0.39 seconds):
+    - Typical runtimes: ~ 390ms, ~ 0% in data generation
+    - 1 passing examples, 0 failing examples, 0 invalid examples
+
+  - Stopped because nothing left to do
