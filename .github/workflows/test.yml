@@ -21,3 +21,9 @@ jobs:
         run: pip install -r tests/schema_tests/requirements.txt
       - name: Run tests
         run: python3 -m pytest -v ./tests/schema_tests --html=report.html
+      - name: Upload pytest test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: schema-pytest-results
+          path: report.html
+        if: ${{ always() }}
