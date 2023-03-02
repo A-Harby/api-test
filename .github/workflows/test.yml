@@ -20,4 +20,4 @@ jobs:
       - name: Installing all necessary packages
         run: pip install -r tests/schema_tests/requirements.txt
       - name: Run tests
-        run: python3 -m pytest -v ./tests/schema_tests --html=report.htm
+        run: python3 -m pytest -v ./tests/schema_tests --html=report.html
