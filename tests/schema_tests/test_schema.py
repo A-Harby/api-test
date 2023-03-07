@@ -4,7 +4,9 @@ import schemathesis
 from schemathesis.checks import not_a_server_error, status_code_conformance, content_type_conformance, response_schema_conformance, response_headers_conformance
 
 network = os.environ['NETWORK']
-if network == 'main':
+if network == 'local':
+    url = 'http://localhost:8080'
+elif network == 'main':
     url = 'https://gridproxy.grid.tf'
 else:
     url = 'https://gridproxy.' + network + '.grid.tf'
